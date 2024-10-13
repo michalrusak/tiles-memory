@@ -1,0 +1,30 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .stats {
+    margin-bottom: 20px;
+    p {
+      margin: 5px;
+    }
+  }
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+  }
+}
+
+.reset-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  *:hover {
+    background-color: red;
+  }
+}

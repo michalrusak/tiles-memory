@@ -1,0 +1,21 @@
+.tile {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s;
+
+  &.revealed {
+    background-color: #4caf50;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
