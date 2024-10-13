@@ -93,13 +93,12 @@ export const useGameStore = create<GameState>((set, get) => ({
             set({ history: newHistory, isGameActive: false });
           }
         } else {
-          set({
-            tiles: updatedTiles.map((t) =>
-              t.id === firstTile.id || t.id === tile.id
-                ? { ...t, revealed: false }
-                : t
-            ),
-          });
+          const resetRevealedTiles = updatedTiles.map((t) =>
+            [firstTile.id, tile.id].includes(t.id)
+              ? { ...t, revealed: false }
+              : t
+          );
+          set({ tiles: resetRevealedTiles });
         }
 
         set({ revealedTiles: [], attempts: attempts + 1 });

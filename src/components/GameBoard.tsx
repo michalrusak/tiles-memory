@@ -20,7 +20,7 @@ const GameBoard: React.FC = () => {
 
   useEffect(() => {
     resetGame();
-  }, [resetGame]);
+  }, []);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -50,7 +50,7 @@ const GameBoard: React.FC = () => {
           <label>Level: </label>
           <select
             value={level}
-            onChange={(e) => handleLevelChange(Number(e.target.value))}
+            onChange={(e) => handleLevelChange(+e.target.value)}
           >
             <option value={1}>Easy</option>
             <option value={2}>Medium</option>
