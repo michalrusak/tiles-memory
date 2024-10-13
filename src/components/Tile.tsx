@@ -11,7 +11,9 @@ interface TileProps {
 const Tile: React.FC<TileProps> = ({ tile, onReveal }) => {
   return (
     <button
-      className={`tile ${tile.revealed ? "revealed" : ""}`}
+      className={`tile ${tile.revealed ? "revealed" : ""} ${
+        tile.matched ? "matched" : ""
+      }`}
       onClick={() => onReveal(tile)}
       disabled={tile.revealed || tile.matched}
     >
