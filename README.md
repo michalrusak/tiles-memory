@@ -1,50 +1,106 @@
-# React + TypeScript + Vite
+# **Memory Card Matching Game**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Demo](https://tiles-memory.onrender.com/)
 
-Currently, two official plugins are available:
+This project is a **memory card matching game** built with modern frontend technologies. The goal of the game is to find and match pairs of identical image tiles by clicking on them. It features multiple difficulty levels, game statistics tracking, and game history stored locally using the browser’s `localStorage`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application is designed to be responsive, visually appealing, and performant across devices.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## **Features**
 
-- Configure the top-level `parserOptions` property like this:
+- **Tile Matching Mechanics**:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+  - Reveal tiles by clicking, and match pairs of identical images.
+  - Tiles reset if not matched within one attempt.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Multiple Difficulty Levels**:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  - Users can select different difficulty levels with varying numbers of tiles.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Game Statistics**:
+
+  - Track attempts, matched pairs, and elapsed time during gameplay.
+  - Automatically start the timer on the first tile click.
+
+- **Local Game History**:
+
+  - Store information about previous games in `localStorage` (including date, attempts, and duration).
+
+- **Visual Effects**:
+  - Smooth animations with CSS transitions for tile flipping.
+  - Matched tiles are visually dimmed to indicate completion.
+
+---
+
+## **Technologies Used**
+
+- **Frontend Framework**:
+
+  - [React](https://react.dev/) – for building the user interface.
+  - [Vite](https://vitejs.dev/) – for fast development and optimized builds.
+
+- **State Management**:
+
+  - [Zustand](https://zustand-demo.pmnd.rs/) – for managing game state (tiles, attempts, game timer).
+
+- **Styling**:
+
+  - **SCSS** – for component-specific styling and reusable CSS.
+  - CSS transitions – for smooth visual animations.
+
+- **TypeScript**:
+
+  - Enforced type safety across components.
+
+- **Icons**:
+  - Custom icon sets, with support for additional icons for future updates.
+
+---
+
+### Steps to Install and Run the Application
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone <repository_url>
+   cd memory-game
+   ```
+
+2. **Install dependencies**:  
+   Install the required packages using `npm` or `yarn`.
+
+   **Using npm**:
+
+   ```bash
+   npm install
+   ```
+
+   **Using yarn**:
+
+   ```bash
+   yarn install
+   ```
+
+3. **Run the development server**:  
+   This will start the app locally and open it in your browser.
+
+   **Using npm**:
+
+   ```bash
+   npm run dev
+   ```
+
+   **Using yarn**:
+
+   ```bash
+   yarn dev
+   ```
+
+4. **Open the game** in your browser:  
+   Navigate to:
+   ```
+   http://localhost:5173
+   ```
+
